@@ -1,0 +1,68 @@
+<%- include('template/header') %>
+<%- include('template/slide') %>
+
+<ul class="bread">
+  <li><div  target="right" class="icon-home"> 首页</div></li>
+  <li>网站信息</li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 网站信息</strong></div>
+        <div class="body-content">
+            <form method="post" class="form-x" action="/admin/info/check">
+                <div class="form-group">
+                    <div class="label">
+                        <label>网站标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="title" value="<%= title%>" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="label">
+                        <label>网站关键字：</label>
+                    </div>
+                    <div class="field">
+                        <textarea class="input" name="keywords" style="height:80px">
+                            <%= keywords %>
+                        </textarea>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>网站描述：</label>
+                    </div>
+                    <div class="field">
+                        <textarea class="input" name="description">
+                            <%= description %>
+                        </textarea>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>联系人：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="phone" value="<%= phone %>" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

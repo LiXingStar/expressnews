@@ -1,0 +1,32 @@
+<%- include('template/header') %>
+<%- include('template/slide') %>
+<ul class="bread">
+    <li><div  target="right" class="icon-home"> 首页</div></li>
+    <li>网站信息</li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel">
+                <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
+                <div class="padding border-bottom">
+                    <button type="button" class="button border-yellow" onclick="window.location.href='/admin/cate/indexcate'"><span class="icon-plus-square-o"></span> 添加分类</button>
+                </div>
+                <table class="table table-hover text-center">
+                    <tr>
+                        <th width="5%">ID</th>
+                        <th width="15%">分类</th>
+                        <th width="10%">操作</th>
+                    </tr>
+                   <% for(let i=0;i<list.length;i++){%>
+                    <tr>
+                        <td><%= list[i]['cid']%></td>
+                        <td><%= list[i]['cname']%></td>
+                        <td><div class="button-group"> <a class="button border-main" href="/admin/cate/editcate?cid=<%=list[i]['cid']%>" ><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="/admin/cate/deletecate?cid=<%=list[i]['cid']%>"><span class="icon-trash-o"></span> 删除</a> </div></td>
+                    </tr>
+                    <% }%>
+
+                </table>
+            </div>
+</div>
+
+</body>
+</html>
